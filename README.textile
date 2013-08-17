@@ -1,4 +1,4 @@
-h1. Demo project for exposing Play! Framework bug.
+h3. Demo project for exposing Play! Framework bug.
 
 Application drops HTTP session while render after params.flash() in controller. There must be substantional number of parameters (i.e. form fields) to reveal this bug. 30-40 fields is perfect for this.
 
