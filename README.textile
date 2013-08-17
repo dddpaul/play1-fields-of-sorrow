@@ -1,0 +1,26 @@
+h1. Demo project for exposing Play! Framework bug.
+
+Application drops HTTP session while render after params.flash() in controller. There must be substantional number of parameters (i.e. form fields) to reveal this bug. 30-40 fields is perfect for this.
+
+So, the recipe is very simple:
+* create form with about 40 fields and submit button on index page;
+* call params.flash() and render index page in the form action handler.
+
+Affected framework versions: 1.2.5.1, 1.2.6, 1.2.x-1.2.6-14-g9b5db0e.
+Not affected: 1.2.5.
+
+Tested on these JREs:
+* 1.6.0.45;
+* 1.7.0.25.
+
+Tested on these OSes:
+* Centos 5.9 i386 (OpenVZ-virtualized);
+* Ubuntu 12.04 i386 (KVM-virtualized);
+* Ubuntu 12.04 x86_64 (KVM-virtualized);
+* Ubuntu 12.04 x86_64 (baremetal).
+
+Was not tested on Windows.
+
+The most important thing - *this bug is exposed on 32-bit Java only.* There is was no problems with 64-bit Java.
+
+Bug is reproduced in DEV or PROD modes both, so you can launch this app with "play test" or "play run --%prod".
