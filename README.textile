@@ -23,4 +23,4 @@ Was not tested on Windows.
 
 The most important thing - *this bug is exposed on 32-bit Java only.* There is was no problems with 64-bit Java.
 
-Bug is reproduced in DEV or PROD modes both, so you can launch this app with "play test" or "play run --%prod".
+Bug is reproduced in DEV or PROD modes both, so you can launch this app with @play test@ or @play run --%prod@.
