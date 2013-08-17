@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{form @add()}
+    #{list items: 1..20, as: 'i'}
+        #{field 'field_' + i }
+            <div>
+                <label for="${field.id}">${field.name}</label>
+                <input type="text" name="${field.name}" id="${field.id}" value="${field.flash}" title="${field.name}"/>
+            </div>
+        #{/field}
+    #{/list}
+    <button name="submit" type="submit">Add</button>
+#{/form}
